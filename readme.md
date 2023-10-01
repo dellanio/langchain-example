@@ -1,37 +1,24 @@
-# Langchain Ask PDF (Tutorial)
+Langchain Ask PDF (Tutorial)
 
->You may find the step-by-step video tutorial to build this application [on Youtube](https://youtu.be/wUAUdEw5oxM).
+Este é um aplicativo Python que permite carregar um PDF e fazer perguntas sobre ele usando linguagem natural. O aplicativo utiliza um LLM para gerar uma resposta sobre o seu PDF. O LLM não responderá a perguntas não relacionadas ao documento.
 
-This is a Python application that allows you to load a PDF and ask questions about it using natural language. The application uses a LLM to generate a response about your PDF. The LLM will not answer questions unrelated to the document.
+Como funciona
+O aplicativo lê o PDF e divide o texto em pedaços menores que podem ser alimentados em um LLM. Ele utiliza incorporações OpenAI para criar representações vetoriais dos pedaços. Em seguida, o aplicativo encontra os pedaços que são semanticamente similares à pergunta que o usuário fez e alimenta esses pedaços no LLM para gerar uma resposta.
 
-## How it works
+O aplicativo utiliza o Streamlit para criar a interface gráfica e o Langchain para lidar com o LLM.
 
-The application reads the PDF and splits the text into smaller chunks that can be then fed into a LLM. It uses OpenAI embeddings to create vector representations of the chunks. The application then finds the chunks that are semantically similar to the question that the user asked and feeds those chunks to the LLM to generate a response.
+Instalação
+Para instalar o repositório, por favor, clone este repositório e instale os requirements:
 
-The application uses Streamlit to create the GUI and Langchain to deal with the LLM.
-
-
-## Installation
-
-To install the repository, please clone this repository and install the requirements:
-
-```
+Copy code
 pip install -r requirements.txt
-```
+Você também precisará adicionar sua chave de API da OpenAI ao arquivo .env.
 
-You will also need to add your OpenAI API key to the `.env` file.
+Uso
+Para usar o aplicativo, execute o arquivo main.py com a CLI do Streamlit (depois de ter instalado o Streamlit):
 
-## Usage
-
-To use the application, run the `main.py` file with the streamlit CLI (after having installed streamlit): 
-
-```
+arduino
+Copy code
 streamlit run app.py
-```
-
-
-## Contributing
-
-This repository is for educational purposes only and is not intended to receive further contributions. It is supposed to be used as support material for the YouTube tutorial that shows how to build the project.
-
-
+Contribuição
+Este repositório é apenas para fins educacionais e não tem a intenção de receber mais contribuições. Ele deve ser usado como material de apoio para o tutorial do YouTube que mostra como construir o projeto.
